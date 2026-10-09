@@ -7,7 +7,7 @@
 仓库地址规划为：
 
 ```text
-https://github.com/zhimoe/album
+https://github.com/zhimoe/moments
 ```
 
 项目已经包含 `.github/workflows/pages.yml`。每次向 `main` 分支推送时，工作流会把仓库根目录作为完整站点发布。
@@ -20,7 +20,7 @@ https://github.com/zhimoe/album
 4. 未配置子域名前，默认地址为：
 
    ```text
-   https://zhimoe.github.io/album/
+   https://zhimoe.github.io/moments/
    ```
 
 项目中的图片、CSS 和 JavaScript 都使用相对地址，因此默认项目地址和自定义子域名都能正常工作。
@@ -31,7 +31,7 @@ https://github.com/zhimoe/album
 
 ### 2.1 GitHub Pages 设置
 
-1. 打开 `zhimoe/album` 的 **Settings → Pages**。
+1. 打开 `zhimoe/moments` 的 **Settings → Pages**。
 2. 在 **Custom domain** 输入：
 
    ```text
@@ -113,7 +113,7 @@ git push
 进入本仓库后：
 
 ```bash
-cd album
+cd moments
 ```
 
 1. 将处理好的 WebP 图片放入 `assets/photos/`。
@@ -163,7 +163,7 @@ cwebp -q 84 input.jpg -o assets/photos/output.webp
 
 ```bash
 dig moments.zhi.moe +short
-curl -I https://zhimoe.github.io/album/
+curl -I https://zhimoe.github.io/moments/
 curl -I https://moments.zhi.moe/
 ```
 
