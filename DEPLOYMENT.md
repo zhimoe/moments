@@ -1,6 +1,6 @@
 # 部署与接入说明
 
-本项目是纯静态站点，不需要 Node.js、数据库或服务器。推荐发布到 GitHub Pages，并使用 `album.zhi.moe` 作为访问地址。
+本项目是纯静态站点，不需要 Node.js、数据库或服务器。推荐发布到 GitHub Pages，并使用 `moments.zhi.moe` 作为访问地址。
 
 ## 1. 仓库与自动发布
 
@@ -25,7 +25,7 @@ https://github.com/zhimoe/album
 
 项目中的图片、CSS 和 JavaScript 都使用相对地址，因此默认项目地址和自定义子域名都能正常工作。
 
-## 2. 配置 `album.zhi.moe`
+## 2. 配置 `moments.zhi.moe`
 
 建议先在 GitHub 设置自定义域名，再修改 DNS。
 
@@ -35,7 +35,7 @@ https://github.com/zhimoe/album
 2. 在 **Custom domain** 输入：
 
    ```text
-   album.zhi.moe
+   moments.zhi.moe
    ```
 
 3. 点击 **Save**。
@@ -48,7 +48,7 @@ https://github.com/zhimoe/album
 
 | 类型 | 名称 | 目标 |
 | --- | --- | --- |
-| CNAME | `album` | `zhimoe.github.io` |
+| CNAME | `moments` | `zhimoe.github.io` |
 
 注意：
 
@@ -60,7 +60,7 @@ https://github.com/zhimoe/album
 可以在终端检查：
 
 ```bash
-dig album.zhi.moe +short
+dig moments.zhi.moe +short
 ```
 
 结果应最终指向 `zhimoe.github.io`。
@@ -71,7 +71,7 @@ DNS 检查通过后回到 **Settings → Pages**：
 
 1. 等待 GitHub 完成 DNS 检查并签发证书。
 2. 勾选 **Enforce HTTPS**。
-3. 访问 `https://album.zhi.moe/` 验证。
+3. 访问 `https://moments.zhi.moe/` 验证。
 
 建议在 GitHub 个人账号的 **Settings → Pages** 中验证 `zhi.moe` 域名，并保留 GitHub 给出的 TXT 记录，降低子域名被其他 Pages 项目占用的风险。
 
@@ -88,7 +88,7 @@ config/_default/menu.toml
 ```toml
 [[main]]
 name = "相册"
-url = "https://album.zhi.moe/"
+url = "https://moments.zhi.moe/"
 weight = 5
 ```
 
@@ -162,12 +162,12 @@ cwebp -q 84 input.jpg -o assets/photos/output.webp
 依次检查：
 
 ```bash
-dig album.zhi.moe +short
+dig moments.zhi.moe +short
 curl -I https://zhimoe.github.io/album/
-curl -I https://album.zhi.moe/
+curl -I https://moments.zhi.moe/
 ```
 
-确认 Pages 设置中的 Custom domain 是 `album.zhi.moe`，DNS 的 CNAME 目标是 `zhimoe.github.io`。
+确认 Pages 设置中的 Custom domain 是 `moments.zhi.moe`，DNS 的 CNAME 目标是 `zhimoe.github.io`。
 
 ### 浏览器仍显示旧样式
 

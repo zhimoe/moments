@@ -48,7 +48,7 @@ python3 -m http.server 4173
 这个目录不依赖 Node.js 或构建步骤，已经包含 GitHub Pages 工作流。完整步骤见 [DEPLOYMENT.md](DEPLOYMENT.md)，其中包括：
 
 - 首次启用 GitHub Pages
-- 配置 `album.zhi.moe` 子域名和 HTTPS
+- 配置 `moments.zhi.moe` 子域名和 HTTPS
 - 在现有 Hugo 博客中增加“相册”菜单
 - 日常更新照片和触发部署
 - DNS 与部署故障排查
