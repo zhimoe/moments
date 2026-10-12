@@ -1,7 +1,8 @@
+import albums from "./albums/index.js";
+
 (() => {
   "use strict";
 
-  const albums = window.FAMILY_ALBUMS || [];
   const grid = document.querySelector("#album-grid");
   const total = document.querySelector("#album-total");
   const reader = document.querySelector("#reader");

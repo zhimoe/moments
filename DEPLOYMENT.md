@@ -116,11 +116,17 @@ git push
 cd moments
 ```
 
-1. 将处理好的 WebP 图片放入 `assets/photos/`。
-2. 在 `albums.js` 中新增照片或相册。
-3. 本地预览：
+1. 从原始照片目录创建相册（JPG、PNG、TIFF 会自动转换为 WebP）：
 
    ```bash
+   npm run album:create -- summer-2026 ~/Pictures/summer-2026
+   ```
+
+2. 补全 `albums/summer-2026/album.js` 中留空的标题和照片说明。也可以在 `cover` 或 `src` 直接填写 HTTPS 图床 URL。
+3. 检查配置并本地预览：
+
+   ```bash
+   npm run albums:check
    python3 -m http.server 4173
    ```
 
@@ -135,6 +141,8 @@ cd moments
 
 推送后，GitHub Actions 会自动重新部署。
 
+详细更新流程见 [ALBUM_WORKFLOW.md](ALBUM_WORKFLOW.md)。提交钩子和 GitHub Actions 都会检查空说明、失效的本地图片引用和未同步的相册索引；检查失败时不能提交或发布。
+
 ## 5. 照片处理建议
 
 - 长边建议为 1600–2400px。
@@ -145,10 +153,10 @@ cd moments
 - 方图使用 `orientation: "square"`。
 - 不要将相机 RAW 文件或原始大图提交到仓库。
 
-示例转换命令：
+手动转换单张照片的示例命令：
 
 ```bash
-cwebp -q 84 input.jpg -o assets/photos/output.webp
+cwebp -q 84 input.jpg -o albums/summer-2026/output.webp
 ```
 
 ## 6. 常见问题

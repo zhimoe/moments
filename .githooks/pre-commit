@@ -1,0 +1,11 @@
+#!/bin/sh
+
+set -eu
+
+echo "正在检查待提交的相册配置……"
+staged_album_dir=$(mktemp -d "${TMPDIR:-/tmp}/family-album-check.XXXXXX")
+trap 'rm -rf "$staged_album_dir"' EXIT HUP INT TERM
+
+git checkout-index --all --prefix="$staged_album_dir/"
+cd "$staged_album_dir"
+node scripts/albums.mjs check

@@ -1,0 +1,14 @@
+{
+  "name": "family-album",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "album:create": "node scripts/albums.mjs create",
+    "albums:sync": "node scripts/albums.mjs sync",
+    "albums:check": "node scripts/albums.mjs check",
+    "prepare": "node scripts/install-hooks.mjs"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}
